@@ -83,7 +83,7 @@ const Projects = () => {
         <Box sx={{ margin: "3rem" }}>
           <Button
             fullWidth
-            href="https://github.com/SomnathKar000?tab=repositories"
+            href="https://github.com/Vinayak097"
             target="_blank"
             variant="contained"
           >

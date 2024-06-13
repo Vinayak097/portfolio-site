@@ -31,13 +31,13 @@ const Contact = () => {
       return;
     }
     if (data.name.trim().length <= 4) {
-      setAlertMessage("Please enter a valid name");
+      setAlertMessage("Please enter a valid name (name>4)");
       setAlertType("error");
       setOpen(true);
       return;
     }
     if (data.message.trim().length <= 6) {
-      setAlertMessage("Enter your message");
+      setAlertMessage("Enter your message (m>6)");
       setAlertType("error");
       setOpen(true);
       return;
@@ -46,6 +46,7 @@ const Contact = () => {
     emailjs
       .send("service_3npkrfo", "template_hh8m4xp", data, "Twwap4ZeVKnG-749h")
       .then((responce) => {
+        console.log(responce)
         setAlertMessage("Message sent successfully");
         setAlertType("success");
         setOpen(true);

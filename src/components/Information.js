@@ -16,8 +16,8 @@ import CakeIcon from "@mui/icons-material/Cake";
 
 const SocialAccounts = () => {
   const CV = process.env.REACT_APP_CV;
-  const email = process.env.REACT_APP_EMAIL || "somnathkar2023@gmail.com";
-  const phone = process.env.REACT_APP_PHONE || "8509592835";
+  const email = process.env.REACT_APP_EMAIL || "vinayak20injamure@gmail.com";
+  const phone = process.env.REACT_APP_PHONE || "8975671575";
   return (
     <Wrapper>
       <Paper evevation={4}>
@@ -28,7 +28,7 @@ const SocialAccounts = () => {
               align="right"
               variant="body2"
             >
-              <Typography>17/09/2001</Typography>
+              <Typography>12/09/2002</Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
@@ -45,7 +45,14 @@ const SocialAccounts = () => {
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2">
-              Kartickpur Deganga Adarsha Vidyapith
+            Rajshri shahu school
+            <Typography
+                variant="caption"
+                display="block"
+                color="text.secondary"
+              >
+                marks-72.20%
+              </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
@@ -63,13 +70,20 @@ const SocialAccounts = () => {
                 display="block"
                 color="text.secondary"
               >
-                March 2016 -- March 2017
+               std- X
               </Typography>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2">
-              Kartickpur Deganga Adarsha Vidyapith
+            Swami Vivekanand Institute of Technology, 
+            <Typography
+                variant="caption"
+                display="block"
+                color="text.secondary"
+              >
+                marks-86.69%
+              </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
@@ -87,19 +101,19 @@ const SocialAccounts = () => {
                 display="block"
                 color="text.secondary"
               >
-                March 2018 -- March 2019
+               <span className="pr-4"></span> <span>aug 2018 -- March 2021</span>
               </Typography>
             </TimelineContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2">
-              Maulana Abul Kalam Azad University of Technology
+            Brahmdevdada Mane Institute Of Technology, Solapur.
               <Typography
                 variant="caption"
                 display="block"
                 color="text.secondary"
               >
-                CGPA: 9.09
+                CGPA: -
               </Typography>
             </TimelineOppositeContent>
 
@@ -119,7 +133,7 @@ const SocialAccounts = () => {
                 display="block"
                 color="text.secondary"
               >
-                Sept 2019 -- July 2023
+                Sept 2021 -- July 2024
               </Typography>
             </TimelineContent>
           </TimelineItem>

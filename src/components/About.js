@@ -10,20 +10,20 @@ const About = () => {
 
   const Somnath =
     process.env.REACT_APP_IMAGE ||
-    "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
+    "";
 
   return (
     <Wrapper>
       <Box ref={aboutRef} className="Contain" maxWidth="xl">
         <Box className="text_box">
           <Typography className="HeaderText" variant="h4">
-            Hi, I'm Somnath
+            Hi, I'm Vinay
             <br /> I'm a MERN stack developer
           </Typography>
           <Typography variant="p">
             I specialize in building full-stack web applications using the MERN
-            (MongoDB, Express, React, Node.js) stack. I'm also familiar with AWS
-            services and have created a few serverless applications. I'm
+            (MongoDB, Express, React, Node.js) stack. I'm also familiar with Nextjs
+          {/*services and have created a few serverless applications*/}. I'm
             passionate about developing elegant and efficient code, and I'm
             always looking to learn new technologies and programming paradigms.
           </Typography>
@@ -72,7 +72,7 @@ const About = () => {
           <img
             className="profile_box"
             src={Somnath}
-            alt="Somnath"
+            alt="Vinay"
             width="70%"
             style={{
               filter: mode === "light" ? "none" : "grayscale(100%)",
