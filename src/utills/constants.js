@@ -45,7 +45,7 @@ export const ProjectDetails = [
   {
     name: "Blog-site",
     image:
-      "images/blogsnipe.png",
+      "https://res.cloudinary.com/dtxmdxizu/image/upload/fl_preserve_transparency/v1718342130/blogsnipe_gaq8kj.jpg?_s=public-apps",
     websiteLink: "https://blogging-app-seven-psi.vercel.app/",
     gitHubLink: "https://github.com/Vinayak097/bloging_app",
 
@@ -55,7 +55,7 @@ export const ProjectDetails = [
   {
     name: "Todo-app",
     image:
-      "images/todosnip.png",
+      "https://res.cloudinary.com/dtxmdxizu/image/upload/v1718342429/todosnip_zmtsjy.png",
     websiteLink: "https://frontendtodo-tau.vercel.app/",
     gitHubLink: "https://github.com/Vinayak097/frontendtodo.git",
 
@@ -67,7 +67,7 @@ export const ProjectDetails = [
     name: "paytm",
     image:
       "images/paytmsnip.png",
-    websiteLink: "",
+    websiteLink: "https://res.cloudinary.com/dtxmdxizu/image/upload/v1718342492/paytmsnip_rgn8xs.png",
     gitHubLink: "https://github.com/Vinayak097/paytmsmproject.git",
 
     about:
