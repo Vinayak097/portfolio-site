@@ -20,10 +20,10 @@ const Contact = () => {
   const [data, setData] = useState({ name: "", email: "", message: "" });
   const [alertMessage, setAlertMessage] = useState("Enter your details");
   const [alertType, setAlertType] = useState("info");
-
+  const [emailloader,seteamilloader]=useState(false);
   const onSubmit = (event) => {
     event.preventDefault();
-
+    seteamilloader(true)
     if (!isValidEmail(data.email)) {
       setAlertMessage("Please enter a valid email");
       setAlertType("error");
@@ -42,17 +42,27 @@ const Contact = () => {
       setOpen(true);
       return;
     }
-
+    
     emailjs
-      .send("service_3npkrfo", "template_hh8m4xp", data, "Twwap4ZeVKnG-749h")
-      .then((responce) => {
-        console.log(responce)
-        setAlertMessage("Message sent successfully");
-        setAlertType("success");
-        setOpen(true);
-        setData({ name: "", email: "", message: "" });
-      });
-  };
+    .send("service_pqjiu8m", "template_qrxdnbs", data, "jNb4ZzfFrLnsQTD0K")
+    .then((response) => {  // Changed from "responce"
+      console.log(response);
+      setAlertMessage("Message sent successfully");
+      setAlertType("success");
+      console.log(alertMessage)
+      setOpen(true);
+      setData({ name: "", email: "", message: "" });
+      seteamilloader(false);
+    })
+    .catch((error) => {  // Added this block
+      seteamilloader(false);
+      console.error('Failed to send message', error);
+      setAlertMessage("Failed to send message");
+      setAlertType("error");
+      setOpen(true);
+    });
+};
+  
 
   const onChange = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
@@ -110,14 +120,15 @@ const Contact = () => {
               borderColor: "#616161",
             }}
           />
-          <Button
-            variant="contained"
-            type="submit"
-            value="Submit"
-            color="success"
-          >
-            Submit
-          </Button>
+        
+          <Button 
+          variant="contained"
+          type="submit"
+          value="Submit"
+          color="success"
+        >
+          {emailloader?"loading...":"Submit"}
+        </Button>
         </form>
       </Box>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -131,8 +142,8 @@ const Contact = () => {
       </Snackbar>
     </Wrapper>
   );
-};
 
+};
 const Wrapper = styled.div`
   text-align: center;
   margin-bottom: 2rem;
