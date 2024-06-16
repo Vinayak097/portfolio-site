@@ -66,8 +66,8 @@ export const ProjectDetails = [
   {
     name: "paytm",
     image:
-      "images/paytmsnip.png",
-    websiteLink: "https://res.cloudinary.com/dtxmdxizu/image/upload/v1718342492/paytmsnip_rgn8xs.png",
+      "https://res.cloudinary.com/dtxmdxizu/image/upload/v1718342492/paytmsnip_rgn8xs.png",
+    websiteLink: "",
     gitHubLink: "https://github.com/Vinayak097/paytmsmproject.git",
 
     about:
