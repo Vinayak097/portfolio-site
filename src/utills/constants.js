@@ -73,6 +73,14 @@ export const ProjectDetails = [
     about:
       "Designed and developed a payment website to send and receive dummy money codes with React,Express.js and MongoDB  Implemented a secure end-to-end payment system by leveraging MongoDB’s database transactions  Utilized Bcrypt encryption to hash and salt user credentials,for securing sensitive user credentials",
   },
+  {
+    name:"Assistly",
+    image:"https://res.cloudinary.com/dtxmdxizu/image/upload/v1721209707/Screenshot_36_d3mcjb.png",
+    websiteLink:"",
+    gitHubLink:"https://github.com/Vinayak097/ai-content-generator-.git",
+    about:""
+
+  }
   
 
   
@@ -81,21 +89,24 @@ export const ProjectDetails = [
 export const Skills = [
   "TypeScript",
   "JavaScript",
+  "TailwindCSS",
   "React",
-  "Bootstrap",
-  "Material UI",
-  "Axios",
+ 
+  "Nextjs" ,
   "Node.js",
   "Express.js",
-  "Postman",
+  
   "postgresSQL",
   "PrismaORM",
   "MongoDB",
-  "Nextjs" ,
+  
   "RESTful APIs",
   "Git",
-  
+  "Docker",
+  "AWS" ,
+  "kubernates",
+   
   "GitHub",
-  "grpc",
+ "Postman",
   "Vercel",
 ];
