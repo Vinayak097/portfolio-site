@@ -113,7 +113,7 @@ const SocialAccounts = () => {
                 display="block"
                 color="text.secondary"
               >
-                CGPA: -
+                CGPA: -8.11
               </Typography>
             </TimelineOppositeContent>
 
