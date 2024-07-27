@@ -15,7 +15,8 @@ import SchoolIcon from "@mui/icons-material/School";
 import CakeIcon from "@mui/icons-material/Cake";
 
 const SocialAccounts = () => {
-  const CV = process.env.REACT_APP_CV;
+  console.log(process.env.REACT_APP_CV);
+  const CV = process.env.REACT_APP_CV ;
   const email = process.env.REACT_APP_EMAIL || "vinayak20injamure@gmail.com";
   const phone = process.env.REACT_APP_PHONE || "8975671575";
   return (
