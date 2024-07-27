@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   Box,
   Typography,
@@ -59,6 +60,8 @@ const Contact = () => {
       console.error('Failed to send message', error);
       setAlertMessage("Failed to send message");
       setAlertType("error");
+      setData({ name: "", email: "", message: "" });
+      seteamilloader(false);
       setOpen(true);
     });
 };
@@ -127,7 +130,7 @@ const Contact = () => {
           value="Submit"
           color="success"
         >
-          {emailloader?"loading...":"Submit"}
+          {emailloader?<EmailLoader/>:"Submit"}
         </Button>
         </form>
       </Box>
@@ -144,6 +147,12 @@ const Contact = () => {
   );
 
 };
+
+const EmailLoader=()=>{
+  return <div>
+   Loading...
+  </div>
+}
 const Wrapper = styled.div`
   text-align: center;
   margin-bottom: 2rem;

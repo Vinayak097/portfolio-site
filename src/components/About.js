@@ -7,10 +7,10 @@ import { getAccounts } from "../utills/constants";
 const About = () => {
   const { mode, aboutRef, ViewPage, projectsRef, contactRef } = Contextvalues();
   const accounts = getAccounts(mode);
+  console.log(process.env.REACT_APP_IMAGE);
+  const Vinay ="https://res.cloudinary.com/dtxmdxizu/image/upload/v1722077166/dpphoto_bqowq4.jpg";
 
-  const Somnath =
-    process.env.REACT_APP_IMAGE ||
-    "";
+   
 
   return (
     <Wrapper>
@@ -71,7 +71,7 @@ const About = () => {
         <Box className="profile_box">
           <img
             className="profile_box"
-            src={Somnath}
+            src={Vinay}
             alt="Vinay"
             width="70%"
             style={{
