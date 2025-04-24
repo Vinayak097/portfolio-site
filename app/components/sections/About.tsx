@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaCalendar, FaEnvelope, FaMapMarkerAlt, FaPhone, FaQuoteLeft, FaQuoteRight, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 import Section from '../ui/Section';
@@ -17,14 +16,14 @@ export default function About() {
     >
       {/* Quote */}
       <motion.div
-        className="max-w-3xl mx-auto mb-12 text-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 relative"
+        className=" max-w-3xl mx-auto mb-12 text-center  dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 relative"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <FaQuoteLeft className="text-primary/20 text-4xl absolute top-4 left-4" />
-        <p className="text-lg italic text-muted-foreground px-8">
+        <FaQuoteLeft className=" text-primary/20 text-4xl absolute top-4 left-4" />
+        <p className="text-lg italic text-muted-foreground px-8 ">
           I believe in creating web applications that not only look great but also deliver exceptional user experiences. My goal is to build solutions that make a real difference for users and businesses alike.
         </p>
         <FaQuoteRight className="text-primary/20 text-4xl absolute bottom-4 right-4" />

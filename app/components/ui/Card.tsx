@@ -27,8 +27,9 @@ export function Card({
     >
       <CardComponent
         className={cn(
-          'rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden',
-          'hover:shadow-md transition-all duration-300',
+          'rounded-lg border bg-card/50 text-card-foreground shadow-sm overflow-hidden',
+          'backdrop-blur-md hover:shadow-xl transition-all duration-300',
+          'border-white/20 dark:border-gray-700/30',
           className
         )}
         href={href}
@@ -124,14 +125,17 @@ export function CardImage({
   height?: number;
 }) {
   return (
-    <div className={cn('relative w-full h-48 overflow-hidden', className)}>
+    <div className={cn('relative w-full h-48 overflow-hidden group', className)}>
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
-        className="object-cover w-full h-full"
+        className="object-cover w-full h-full transition-transform duration-700 ease-in-out group-hover:scale-110"
+        quality={90}
+        priority
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 }

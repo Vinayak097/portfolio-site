@@ -96,7 +96,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Hello, I'm
+              Hello, I&apos;m
             </motion.p>
 
             <motion.h1
@@ -157,14 +157,14 @@ export default function Hero() {
                 <span>View My Work</span>
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
               </Button>
-              <Button href="#contact" variant="outline" size="lg">
+              <Button className='bg-blue-500 ' href="#contact" variant="outline" size="lg">
                 Contact Me
               </Button>
               <Button
                 href={personalData.resumeUrl}
                 variant="outline"
                 size="lg"
-                className="flex items-center gap-2"
+                className="flex bg-blue-500 items-center gap-2"
               >
                 <HiOutlineDocumentDownload className="text-xl" />
                 Resume

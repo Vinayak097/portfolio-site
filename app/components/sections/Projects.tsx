@@ -11,7 +11,6 @@ import { projects } from '@/app/data/projects';
 
 export default function Projects() {
   const [filter, setFilter] = useState<string | null>(null);
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   // Get unique technologies from all projects
   const allTechnologies = Array.from(
@@ -33,32 +32,43 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      title="My Projects"
-      subtitle="Check out some of my recent work"
-      className="bg-muted/30"
+      title="Featured Projects"
+      subtitle="Explore my portfolio of web applications and development projects"
+      className="bg-gradient-to-b from-muted/10 to-muted/30 backdrop-blur-sm"
     >
       {/* Filter buttons */}
-      <div className="flex flex-wrap gap-2 mb-8 justify-center">
+      <motion.div
+        className="flex flex-wrap gap-2 mb-8 justify-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <Button
           variant={filter === null ? "primary" : "outline"}
           size="sm"
           onClick={() => setFilter(null)}
-          className="rounded-full"
+          className="rounded-full backdrop-blur-sm bg-white/10 dark:bg-gray-800/30 border border-white/20 dark:border-gray-700/30 hover:shadow-lg transition-all duration-300"
         >
-          All
+          All Projects
         </Button>
-        {allTechnologies.map(tech => (
-          <Button
+        {allTechnologies.map((tech, index) => (
+          <motion.div
             key={tech}
-            variant={filter === tech ? "primary" : "outline"}
-            size="sm"
-            onClick={() => setFilter(tech)}
-            className="rounded-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
           >
-            {tech}
-          </Button>
+            <Button
+              variant={filter === tech ? "primary" : "outline"}
+              size="sm"
+              onClick={() => setFilter(tech)}
+              className="rounded-full backdrop-blur-sm bg-white/10 dark:bg-gray-800/30 border border-white/20 dark:border-gray-700/30 hover:shadow-lg transition-all duration-300"
+            >
+              {tech}
+            </Button>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
       <AnimatePresence>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sortedProjects.map((project, index) => (
@@ -70,11 +80,10 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
+
               layout
             >
-              <Card className="h-full flex flex-col overflow-hidden group">
+              <Card className="h-full flex flex-col overflow-hidden group backdrop-blur-md bg-white/30 dark:bg-gray-900/30 border border-white/20 dark:border-gray-700/30">
                 <div className="relative overflow-hidden">
                   <motion.div
                     className="relative"
@@ -88,8 +97,9 @@ export default function Projects() {
                       height={225}
                       className="transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     {project.featured && (
-                      <div className="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
+                      <div className="absolute top-2 right-2 bg-primary/80 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs flex items-center gap-1 shadow-lg">
                         <FaStar className="text-yellow-300" />
                         Featured
                       </div>
@@ -97,7 +107,7 @@ export default function Projects() {
                   </motion.div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
                     {project.name}
                   </CardTitle>
                   <div className="flex flex-wrap gap-1 mt-2">
@@ -105,8 +115,8 @@ export default function Projects() {
                       <Badge
                         key={tech}
                         variant={filter === tech ? "default" : "outline"}
-                        className="cursor-pointer transition-all duration-300"
-                        onClick={() => setFilter(tech)}
+                        className="cursor-pointer transition-all duration-300 backdrop-blur-sm bg-white/10 dark:bg-gray-800/30 border border-white/20 dark:border-gray-700/30 hover:scale-105"
+
                       >
                         {tech}
                       </Badge>
@@ -114,32 +124,34 @@ export default function Projects() {
                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardDescription className="text-gray-700 dark:text-gray-300">{project.description}</CardDescription>
                 </CardContent>
-                <CardFooter className="justify-between gap-2 border-t border-gray-200 dark:border-gray-700 pt-4 mt-2">
+                <CardFooter className="justify-between gap-2 border-t border-white/10 dark:border-gray-700/30 pt-4 mt-2">
                   <div className="text-sm text-muted-foreground">
                     {project.featured ? 'Featured Project' : 'Personal Project'}
                   </div>
                   <div className="flex gap-2">
-                    <a
+                    <motion.a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
+                      className="p-2 rounded-full backdrop-blur-sm bg-white/10 dark:bg-gray-800/30 border border-white/20 dark:border-gray-700/30 hover:bg-primary/80 hover:text-white transition-all duration-300 hover:scale-110"
                       aria-label={`View ${project.name} source code on GitHub`}
+                      whileHover={{ y: -3 }}
                     >
                       <FaGithub className="w-5 h-5" />
-                    </a>
+                    </motion.a>
                     {project.websiteUrl && (
-                      <a
+                      <motion.a
                         href={project.websiteUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
+                        className="p-2 rounded-full backdrop-blur-sm bg-white/10 dark:bg-gray-800/30 border border-white/20 dark:border-gray-700/30 hover:bg-primary/80 hover:text-white transition-all duration-300 hover:scale-110"
                         aria-label={`Visit ${project.name} website`}
+                        whileHover={{ y: -3 }}
                       >
                         <FaExternalLinkAlt className="w-5 h-5" />
-                      </a>
+                      </motion.a>
                     )}
                   </div>
                 </CardFooter>
