@@ -8,7 +8,7 @@ export const personalData = {
   about: "I craft pixel-perfect, responsive web applications with modern JavaScript frameworks. Specializing in the MERN stack, I transform complex problems into elegant, user-friendly solutions that deliver exceptional digital experiences.",
   tagline: "Building digital experiences that matter",
   resumeUrl: "#", // Add your resume URL here
-  avatarUrl: "https://res.cloudinary.com/dtxmdxizu/image/upload/v1722077166/dpphoto_bqowq4.jpg",
+  avatarUrl: "https://res.cloudinary.com/dtxmdxizu/image/upload/v1745480833/WhatsApp_Image_2025-04-24_at_13.09.33_ka89lm.jpg",
   socialLinks: {
     github: "https://github.com/Vinayak097",
     linkedin: "https://linkedin.com/in/vinay721",
