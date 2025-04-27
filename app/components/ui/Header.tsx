@@ -24,7 +24,7 @@ export default function Header() {
 
   // Navigation links
   const navLinks = [
-    
+    { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
   ];
@@ -45,9 +45,9 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/" className="text-xl font-bold bg-gradient-to-r from-primary to-blue-500 dark:from-primary dark:to-blue-400 bg-clip-text text-transparent">
+            <Link href="/" className="text-xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
               {personalData.name.split(' ')[0]}
-              <span className="text-primary">.</span>
+              <span className="text-blue-600 dark:text-blue-400">.</span>
             </Link>
           </motion.div>
 
@@ -64,10 +64,10 @@ export default function Header() {
                   href={link.href}
                   className="text-sm font-medium relative group"
                 >
-                  <span className="relative z-10 transition-colors group-hover:text-primary">
+                  <span className="relative z-10 transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">
                     {link.label}
                   </span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             ))}
@@ -79,7 +79,7 @@ export default function Header() {
               href={personalData.socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
               aria-label="GitHub"
               whileHover={{ y: -3, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -90,7 +90,7 @@ export default function Header() {
               href={personalData.socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
               aria-label="LinkedIn"
               whileHover={{ y: -3, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -101,7 +101,7 @@ export default function Header() {
               href={personalData.socialLinks.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
               aria-label="Twitter"
               whileHover={{ y: -3, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -118,7 +118,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-muted-foreground hover:text-primary transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
+            className="md:hidden text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-2 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             whileTap={{ scale: 0.9 }}
@@ -154,7 +154,7 @@ export default function Header() {
                   >
                     <Link
                       href={link.href}
-                      className="text-sm font-medium py-2 px-4 block rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/30 hover:text-primary transition-all"
+                      className="text-sm font-medium py-2 px-4 block rounded-lg hover:bg-white/10 dark:hover:bg-gray-800/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}
@@ -174,7 +174,7 @@ export default function Header() {
                   href={personalData.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-all p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30"
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30"
                   aria-label="GitHub"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -185,7 +185,7 @@ export default function Header() {
                   href={personalData.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-all p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30"
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30"
                   aria-label="LinkedIn"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -196,7 +196,7 @@ export default function Header() {
                   href={personalData.socialLinks.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-all p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30"
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-800/30"
                   aria-label="Twitter"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}

@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { FaCode, FaServer, FaDatabase, FaTools, FaStar } from 'react-icons/fa';
+
+import { FaCode, FaServer, FaDatabase, FaTools } from 'react-icons/fa';
 import Section from '../ui/Section';
 import { skillCategories } from '@/app/data/skills';
 
@@ -28,7 +28,7 @@ export default function Skills() {
 
   // Function to determine if a skill should be highlighted
   const isSkillHighlighted = (skillName: string): boolean => {
-    const highlightedSkills = ['React', 'Node.js', 'MongoDB', 'TypeScript', 'Next.js'];
+    const highlightedSkills = ['Angular', 'React', 'Next.js', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'PostgreSQL', 'AWS', 'Google Gemini'];
     return highlightedSkills.includes(skillName);
   };
 
@@ -36,122 +36,85 @@ export default function Skills() {
     <Section
       id="skills"
       title="Skills & Technologies"
-      subtitle="My technical expertise across the development stack"
-      className="bg-gradient-to-b from-muted/5 to-muted/20 backdrop-blur-sm"
+     
+      className="bg-white dark:bg-gray-800 py-16"
     >
+      {/* Decorative line */}
+    
+
       {/* Category tabs */}
-      <motion.div
-        className="flex flex-wrap justify-center gap-2 mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.button
-          className={`px-4 py-2 rounded-full transition-all backdrop-blur-md border ${
+      <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <button
+          className={`px-4 py-2 transition-all rounded-md shadow-md ${
             activeCategory === null
-              ? 'bg-primary/80 text-white border-primary/30'
-              : 'bg-white/10 dark:bg-gray-800/30 border-white/20 dark:border-gray-700/30 hover:bg-white/20 dark:hover:bg-gray-700/40'
+              ? 'bg-blue-600 text-white dark:bg-blue-500 shadow-blue-500/20'
+              : 'bg-transparent text-blue-600 dark:text-blue-400 border border-blue-300 dark:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/30'
           }`}
           onClick={() => setActiveCategory(null)}
-          whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.97 }}
         >
           All Skills
-        </motion.button>
-        {skillCategories.map((category, index) => (
-          <motion.button
+        </button>
+        {skillCategories.map((category) => (
+          <button
             key={category.name}
-            className={`px-4 py-2 rounded-full transition-all flex items-center gap-2 backdrop-blur-md border ${
+            className={`px-4 py-2 transition-all flex items-center gap-2 rounded-md shadow-md ${
               activeCategory === category.name
-                ? 'bg-primary/80 text-white border-primary/30'
-                : 'bg-white/10 dark:bg-gray-800/30 border-white/20 dark:border-gray-700/30 hover:bg-white/20 dark:hover:bg-gray-700/40'
+                ? 'bg-blue-600 text-white dark:bg-blue-500 shadow-blue-500/20'
+                : 'bg-transparent text-blue-600 dark:text-blue-400 border border-blue-300 dark:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/30'
             }`}
             onClick={() => setActiveCategory(category.name === activeCategory ? null : category.name)}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.97 }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
           >
             <span className="w-4 h-4">{getCategoryIcon(category.icon)}</span>
             {category.name}
-          </motion.button>
+          </button>
         ))}
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skillCategories
           .filter(category => activeCategory === null || category.name === activeCategory)
-          .map((category, categoryIndex) => (
-          <motion.div
+          .map((category) => (
+          <div
             key={category.name}
-            className="bg-card/50 backdrop-blur-md rounded-lg shadow-sm border border-white/20 dark:border-gray-700/30 p-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-            whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+            className="bg-white dark:bg-gray-800   dark:border-blue-900/30 p-6 rounded-lg shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10 transition-all duration-300"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary border border-primary/30 shadow-md">
+            <div className="flex items-center gap-3 mb-6  dark:border-blue-900/30 pb-3">
+              <div className="w-12 h-12 flex items-center justify-center text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
                 {getCategoryIcon(category.icon)}
               </div>
-              <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500 dark:from-primary dark:to-blue-400">{category.name}</h3>
-              <div className="ml-auto text-sm text-muted-foreground px-3 py-1 rounded-full bg-white/10 dark:bg-gray-800/30 backdrop-blur-md border border-white/10 dark:border-gray-700/20">
+              <h3 className="text-xl font-bold text-blue-700 dark:text-blue-400">{category.name}</h3>
+              <div className="ml-auto text-sm text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">
                 {category.skills.length} skills
               </div>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {category.skills.map((skill, skillIndex) => (
-                <motion.div
+              {category.skills.map((skill) => (
+                <div
                   key={skill.name}
                   className={`flex flex-col items-center p-3 rounded-lg ${
                     isSkillHighlighted(skill.name)
-                      ? 'bg-primary/10 backdrop-blur-md border border-primary/30'
-                      : 'bg-white/10 dark:bg-gray-800/30 backdrop-blur-md border border-white/10 dark:border-gray-700/20'
-                  } transition-all duration-300 relative`}
-                  whileHover={{
-                    y: -5,
-                    scale: 1.05,
-                    boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
-                    borderColor: isSkillHighlighted(skill.name) ? "rgba(var(--primary-rgb), 0.5)" : "rgba(255, 255, 255, 0.3)"
-                  }}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 300,
-                    delay: 0.05 * skillIndex
-                  }}
+                      ? 'bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 shadow-md shadow-blue-500/10'
+                      : 'bg-white dark:bg-gray-800 border border-blue-50 dark:border-blue-900/10 hover:border-blue-200 dark:hover:border-blue-800'
+                  } transition-all duration-300 relative hover:shadow-md hover:-translate-y-1`}
                 >
                   {isSkillHighlighted(skill.name) && (
-                    <motion.div
-                      className="absolute -top-1 -right-1 text-yellow-500 bg-white/80 dark:bg-gray-900/80 rounded-full p-1 backdrop-blur-sm border border-yellow-300/50"
-                      animate={{ rotate: [0, 10, 0, -10, 0] }}
-                      transition={{ repeat: Infinity, duration: 2, repeatType: "loop" }}
-                    >
-                      <FaStar size={10} />
-                    </motion.div>
+                    <div className="absolute top-0 right-0 w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                   )}
-                  <motion.div
-                    className="w-12 h-12 mb-2 relative bg-white/30 dark:bg-gray-800/30 rounded-full p-2 backdrop-blur-sm border border-white/20 dark:border-gray-700/20"
-                    whileHover={{ rotate: 10 }}
-                  >
+                  <div className="w-12 h-12 mb-2 relative bg-white dark:bg-gray-900 p-2 rounded-full">
                     <Image
                       src={skill.icon}
                       alt={skill.name}
                       width={48}
                       height={48}
-                      className="object-contain drop-shadow-md"
+                      className="object-contain transition-all duration-300"
                     />
-                  </motion.div>
-                  <span className="text-sm font-medium text-center bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">{skill.name}</span>
-                </motion.div>
+                  </div>
+                  <span className="text-sm font-medium text-center text-blue-700 dark:text-blue-400">{skill.name}</span>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </Section>

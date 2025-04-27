@@ -11,41 +11,42 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "prepwise",
+    name: "Prepwise - AI Interview Practice Platform",
+    description: "Developed an AI-powered mock interview platform with real-time voice interactions. Implemented voice-based interviews using VAPI.ai for natural conversation flow. Integrated Google Gemini AI for dynamic question generation and feedback analysis.",
+    image: "https://api.microlink.io/?url=https://ai-mock-interview-neon-iota.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
+    websiteUrl: "https://ai-mock-interview-neon-iota.vercel.app/",
+    githubUrl: "https://github.com/Vinayak097/prepwise",
+    technologies: ["Next.js 15", "TypeScript", "Firebase", "Google Gemini AI", "VAPI.ai", "TailwindCSS"],
+    featured: true
+  },
+  {
+    id: "ai-assistly",
+    name: "AI Assistly",
+    description: "Designed and developed AI bots for various content creation tasks. Integrated Gemini API to generate responses to user prompts. Implemented Clerk authentication and over 15 REST APIs for user interaction.",
+    image: "https://placehold.co/600x400/blue/white?text=AI+Assistly",
+    githubUrl: "https://github.com/Vinayak097/ai-content-generator-.git",
+    technologies: ["Next.js", "Gemini API", "TailwindCSS", "PostgreSQL", "Clerk"],
+    featured: true
+  },
+  {
+    id: "real-time-chat",
+    name: "Real-Time Chat Web App",
+    description: "Developed a chat application with real-time messaging. Integrated Redis for efficient data storage and retrieval. Implemented real-time updates for seamless user experience.",
+    image: "https://api.microlink.io/?url=https://redis-chat-neon.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
+    websiteUrl: "https://redis-chat-neon.vercel.app/",
+    githubUrl: "https://github.com/Vinayak097/real-time-chat",
+    technologies: ["Next.js", "Redis", "Upstash", "NextAuth"],
+    featured: true
+  },
+  {
     id: "blog-site",
     name: "Blog Site",
     description: "A user-friendly interface allowing users to create blog posts. Built with React and Node.js, utilizing RESTful APIs for seamless integration with the back-end server.",
-    image: "https://res.cloudinary.com/dtxmdxizu/image/upload/fl_preserve_transparency/v1718342130/blogsnipe_gaq8kj.jpg?_s=public-apps",
+    image: "https://api.microlink.io/?url=https://blogging-app-seven-psi.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
     websiteUrl: "https://blogging-app-seven-psi.vercel.app/",
     githubUrl: "https://github.com/Vinayak097/bloging_app",
     technologies: ["React", "Node.js", "Express", "MongoDB", "RESTful API"],
-    featured: true
-  },
-  {
-    id: "todo-app",
-    name: "Todo App",
-    description: "Designed and developed a pastel theme to-do app with CRUD functionality with React, Express.js and MongoDB. Implemented pagination and categories for better user experience. Utilized bootstrap components to create visually appealing and accessible UI components.",
-    image: "https://res.cloudinary.com/dtxmdxizu/image/upload/v1718342429/todosnip_zmtsjy.png",
-    websiteUrl: "https://frontendtodo-tau.vercel.app/",
-    githubUrl: "https://github.com/Vinayak097/frontendtodo.git",
-    technologies: ["React", "Express.js", "MongoDB", "Bootstrap"],
-    featured: true
-  },
-  {
-    id: "paytm",
-    name: "PayTM Clone",
-    description: "Designed and developed a payment website to send and receive dummy money codes with React, Express.js and MongoDB. Implemented a secure end-to-end payment system by leveraging MongoDB's database transactions. Utilized Bcrypt encryption to hash and salt user credentials, for securing sensitive user credentials.",
-    image: "https://res.cloudinary.com/dtxmdxizu/image/upload/v1718342492/paytmsnip_rgn8xs.png",
-    githubUrl: "https://github.com/Vinayak097/paytmsmproject.git",
-    technologies: ["React", "Express.js", "MongoDB", "Bcrypt"],
     featured: false
-  },
-  {
-    id: "assistly",
-    name: "Assistly",
-    description: "An AI-powered content generation tool that helps users create various types of content efficiently. Built with React and integrated with OpenAI API.",
-    image: "https://res.cloudinary.com/dtxmdxizu/image/upload/v1721209707/Screenshot_36_d3mcjb.png",
-    githubUrl: "https://github.com/Vinayak097/ai-content-generator-.git",
-    technologies: ["React", "AI", "OpenAI API", "TailwindCSS"],
-    featured: true
   }
 ];

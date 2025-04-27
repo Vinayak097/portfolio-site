@@ -21,7 +21,7 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={cycleTheme}
-      className="p-2 rounded-full bg-gray-100/50 dark:bg-gray-800/50 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+      className="p-2 rounded-full bg-blue-50/50 dark:bg-blue-900/20 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       aria-label="Toggle theme"

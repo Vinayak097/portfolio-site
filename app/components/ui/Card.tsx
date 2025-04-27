@@ -117,25 +117,38 @@ export function CardImage({
   className,
   width = 400,
   height = 225,
+  websiteUrl,
 }: {
   src: string;
   alt: string;
   className?: string;
   width?: number;
   height?: number;
+  websiteUrl?: string;
 }) {
   return (
     <div className={cn('relative w-full h-48 overflow-hidden group', className)}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="object-cover w-full h-full transition-transform duration-700 ease-in-out group-hover:scale-110"
-        quality={90}
-        priority
-      />
-
+      {websiteUrl ? (
+        <div className="w-full h-full relative">
+          <iframe
+            src={websiteUrl}
+            title={alt}
+            className="w-full h-full border-0 transform scale-[0.6] origin-top-left"
+            style={{ width: '166%', height: '166%' }}
+          />
+          <div className="absolute inset-0 bg-transparent group-hover:bg-transparent transition-colors duration-300" />
+        </div>
+      ) : (
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="object-cover w-full h-full transition-transform duration-700 ease-in-out group-hover:scale-110"
+          quality={90}
+          priority
+        />
+      )}
     </div>
   );
 }

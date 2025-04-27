@@ -1,13 +1,13 @@
 export const personalData = {
-  name: "Vinay",
-  title: "Full Stack Developer & UI Engineer",
+  name: "Vinaykumar Injamure",
+  title: "Full Stack Web Developer",
   email: "vinayak20injamure@gmail.com",
   phone: "8975671575",
   address: "Solapur, India",
   birthday: "12/09/2002",
-  about: "I craft pixel-perfect, responsive web applications with modern JavaScript frameworks. Specializing in the MERN stack, I transform complex problems into elegant, user-friendly solutions that deliver exceptional digital experiences.",
-  tagline: "Building digital experiences that matter",
-  resumeUrl: "https://drive.google.com/file/d/1N_Jt8AQU9mMDu70nbos-HYpC22TCnP5F/view?usp=sharing", // Add your resume URL here
+  about: "Dynamic Full Stack Web Developer with extensive expertise at FishyHub Pte Ltd, proficient in Angular, React, and RESTful API design, alongside database design and SQL and NoSQL databases. Spearheaded 10X development utilizing AI tools such as Cursor and GitHub Copilot.",
+  tagline: "Building impactful solutions in agile environments",
+  resumeUrl: "https://drive.google.com/file/d/1N_Jt8AQU9mMDu70nbos-HYpC22TCnP5F/view?usp=sharing",
   avatarUrl: "https://res.cloudinary.com/dtxmdxizu/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1745480833/WhatsApp_Image_2025-04-24_at_13.09.33_ka89lm.jpg",
   socialLinks: {
     github: "https://github.com/Vinayak097",
@@ -29,14 +29,16 @@ export const education = [
 
 export const experience = [
   {
-    title: "MERN Stack Developer",
-    company: "Freelance",
-    date: "2022 - Present",
+    title: "Full Stack Web Developer",
+    company: "FishyHub Pte Ltd (Fully Remote)",
+    date: "Aug 2023 - Current",
     description: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Building RESTful APIs with Node.js and Express.",
-      "Working with MongoDB for database management."
+      "Resolved bugs while providing technical support to enhance application performance.",
+      "Contributed to launch of FishyHub's platform in United States, adapting application for regional needs.",
+      "Designed efficient database schemas for effective data storage from web applications.",
+      "Built and integrated RESTful APIs to enhance data connectivity and improve scalability.",
+      "Utilized front-end frameworks such as React or Angular for dynamic web application development.",
+      "Participated in agile development processes, including sprint planning and daily stand-ups."
     ],
     type: "work"
   }
